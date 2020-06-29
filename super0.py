@@ -8,8 +8,8 @@ class Rectangle:
 
     def calculate(self):
         print('area:', self.length * self.width)
+    
         
-
 class Square(Rectangle):
     def __init__(self, length):
         super().__init__(length, length)
@@ -18,3 +18,5 @@ class Square(Rectangle):
 square = Square(3)
 square.show()
 square.calculate()
+
+

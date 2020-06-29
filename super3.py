@@ -8,7 +8,7 @@ class A:
         print('class method')
 
     def show(self):
-        print('bound method')
+        print('instance method')
 
 
 class B(A):
@@ -20,11 +20,11 @@ class B(A):
 
     @classmethod
     def show_class(cls):
+        # super() here is super(__class__, cls) so the result is unbound
         super().show_class()
         super().show_static()
-        # super() here is super(__class__, cls) so the result is unbound
         # this should fail
-        #super().show()
+        super().show()
 
     def show(self):
         # super() here is super(__class__, self) so the result is bound

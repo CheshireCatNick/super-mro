@@ -1,11 +1,13 @@
 class A:
-    pass
+    def hi(self):
+        print('A')
 
 class B(A):
-    pass
+    def hi(self):
+        print('B')
 
 class C(A, B):
     pass
 
-
-print(C.mro())
+c = C()
+c.hi()

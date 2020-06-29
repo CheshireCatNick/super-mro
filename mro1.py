@@ -9,4 +9,4 @@ class C(A, B):
 
 
 print(C.__bases__)
-print(C.__mro__)
+print(C.mro())

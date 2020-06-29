@@ -18,10 +18,10 @@ class D(B, C):
         super().hello()
 
 
-# b = B()
-# b.hello()
+b = B()
+b.hello()
 
-d = D()
-d.hello()
+# d = D()
+# d.hello()
 
 #print(D.mro())
