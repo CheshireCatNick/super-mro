@@ -1,27 +1,23 @@
-class AreaCalculatorMixin:
+class VolumeCalculatorMixin:
     def calculate(self):
-        area = self.length * self.length
-        print('area:', area)
-        return area
+        volume = self.length ** 3
+        print('volume:', volume)
+        return volume
 
-
-class SquareMixin:
+class Square:
     def show(self):
         print('length:', self.length)
 
-
-class Cube(AreaCalculatorMixin, SquareMixin):
+class Cube(Square, VolumeCalculatorMixin):
     def __init__(self, length):
         self.length = length
 
     # def calculate(self):
-    #     #volume = self.length * self.calculate()
-    #     #volume = self.length * AreaCalculatorMixin.calculate(self)
-    #     #volume = self.length * super().calculate()
-    #     print('cube:', volume)
-    #     return volume
+    #     super().calculate()
+    #     VolumeCalculatorMixin.calculate(self)
 
 
 cube = Cube(3)
 cube.show()
+# Cube.show(cube)
 cube.calculate()

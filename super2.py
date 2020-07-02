@@ -1,27 +1,26 @@
 class A:
-    def hello(self):
-        print('hello in A')
+    def hi(self):
+        print('A')
 
 class B(A):
-    def hello(self):
-        print('hello in B')
-        super().hello()
+    def hi(self):
+        print('B')
+        super().hi()
 
 class C(A):
-    def hello(self):
-        print('hello in C')
-        #super().hello()
+    def hi(self):
+        print('C')
+        #super().hi()
 
 class D(B, C):
-    def hello(self):
-        print('hello in D')
-        super().hello()
+    def hi(self):
+        print('D')
+        super().hi()
 
+#b = B()
+#b.hi()
 
-b = B()
-b.hello()
-
-# d = D()
-# d.hello()
+d = D()
+d.hi()
 
 #print(D.mro())
