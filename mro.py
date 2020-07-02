@@ -23,15 +23,15 @@ class H(E, F, G):
     pass
 
 
-# merge([E, B, C, A], [F, B, D, A], [G, C, D, A], [E, F, G])
+# merge([[E, B, C, A], [F, B, D, A], [G, C, D, A], [E, F, G]])
 def merge(mro_lists):
     if not any(mro_lists):
         return []
-    mro_lists = list(filter(lambda mro: len(mro) > 0, mro_lists))
+    mro_lists = [mro for mro in mro_lists if mro]
     tail_classes = [cls for _, *tail in mro_lists for cls in tail]
     for candidate, *_ in mro_lists:
         if candidate not in tail_classes:
-            mro_lists_without_candidate = [tail if head is candidate else [head, *tail] for head, *tail in mro_lists]
+            mro_lists_without_candidate = [tail if head is candidate else [head] + tail for head, *tail in mro_lists]
             return [candidate] + merge(mro_lists_without_candidate)
     raise Exception('no legal mro')
 
